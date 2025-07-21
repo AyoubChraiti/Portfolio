@@ -1,25 +1,29 @@
-/* Custom styles for Apple-like aesthetics with light and dark themes */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 [data-theme="light"] {
-    --bg-primary: #f5f7f6;       /* soft off-white with a hint of green */
-    --bg-secondary: #ffffff;     /* pure white for cards and sections */
-    --bg-footer: #1c2526;        /* dark green, same as gradient-from */
-    --text-primary: #1c2526;     /* very dark green for main text */
-    --text-secondary: #4b6b66;   /* muted teal-green for secondary text */
-    --text-hero: #f5f7f6;        /* light off-white for hero text */
-    --text-footer: #d4d4d8;      /* light gray with slight purple tint */
-    --accent: #14b8a6;           /* bright teal accent */
-    --accent-hover: #0d9488;     /* darker teal for hover states */
-    --progress-bg: #d7e3e0;      /* very light teal/gray for progress bg */
-    --progress-fill: #14b8a6;    /* bright teal for progress fill */
-    --card-bg: #f5f7f6;          /* very light grayish white for cards */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-footer: #103c3a;
+    --text-primary: #103c3a;
+    --text-secondary: #4a6d68;
+    --text-hero: #ffffff;
+    --text-footer: #d3e1dd;
+    --accent: #2dd4bf;
+    --accent-hover: #0f766e;
+    --progress-bg: #e5f5f3;
+    --progress-fill: #2dd4bf;
+    --card-bg: #ffffff;
 
-    --gradient-from: #1c2526;    /* dark green */
-    --gradient-to: #115e59;      /* teal/green */
+    --gradient-from: #103c3a;
+    --gradient-to: #2dd4bf;
+
+    --btn-bg: #2dd4bf;             /* solid mint background */
+    --btn-bg-hover: #0f766e;       /* darker mint on hover */
+    --btn-text: #ffffff;           /* white text */
+    --btn-border: transparent;     /* optional border */
 }
 
 

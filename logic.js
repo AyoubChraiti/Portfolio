@@ -1,49 +1,57 @@
-// Smooth scrolling
+// Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+            const top = target.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// Scroll animation for sections
 const sections = document.querySelectorAll('.section-slide');
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, {
+    threshold: 0.05, // trigger earlier
+    rootMargin: '0px 0px -10% 0px' // animate slightly before fully in view
+});
 
 sections.forEach(section => observer.observe(section));
 
-// Theme toggle logic
+// Theme Toggle Logic
 const html = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
 const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 
 const savedTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', savedTheme);
-updateIcons(savedTheme);
+setTheme(savedTheme);
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = html.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcons(newTheme);
+themeToggle?.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    setTheme(next);
 });
 
+function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateIcons(theme);
+}
+
 function updateIcons(theme) {
-    if (theme === 'light') {
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-    } else {
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-    }
+    const showSun = theme === 'light';
+    sunIcon?.classList.toggle('hidden', !showSun);
+    moonIcon?.classList.toggle('hidden', showSun);
 }
