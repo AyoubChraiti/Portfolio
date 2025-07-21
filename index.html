@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ayoub Chraiti - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="antialiased">
+    <!-- Navbar -->
+    <nav class="bg-[var(--bg-secondary)]/90 backdrop-blur-md shadow-sm sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-semibold text-[var(--text-primary)]">Ayoub Chraiti</h1>
+            <div class="flex items-center gap-6">
+            <ul class="hidden md:flex gap-6 text-sm font-medium">
+                <li><a href="#about" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition">About</a></li>
+                <li><a href="#projects" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition">Projects</a></li>
+                <li><a href="#skills" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition">Skills</a></li>
+                <li><a href="#experiences" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition">Experiences</a></li>
+                <li><a href="#contact" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle w-6 h-6">
+                <svg id="sun-icon" class="w-6 h-6 stroke-[var(--text-secondary)] fill-none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg id="moon-icon" class="w-6 h-6 stroke-[var(--text-secondary)] fill-none hidden" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                </svg>
+            </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="about" class="h-[80vh] flex items-center justify-center pt-10 text-[var(--text-hero)]" style="background-image: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-to))">
+        <div class="max-w-3xl mx-auto px-6 text-center section-slide">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Hey, I'm Ayoub Chraiti</h2>
+            <p class="text-lg md:text-xl mb-6 text-[var(--text-hero)]/80">
+                I'm a student at 1337 Coding School with a deep interest in systems programming, web technologies, and scalable backend infrastructure.
+                I enjoy tackling complex technical challenges and building robust, high-performance solutions that are both efficient and maintainable.
+            </p>
+            <a href="#projects" class="apple-btn inline-block text-base font-medium">Explore My Work</a>
+        </div>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-[var(--bg-secondary)]">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16 text-[var(--text-primary)]">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Project 1 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition section-slide">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">HTTP Server with CGI</h3>
+            <p class="text-[var(--text-secondary)] mb-6">Built a C++/Python HTTP server with epoll and support for CGI, routing, and containers.</p>
+            <a href="https://github.com/AyoubChraiti/webserv" class="apple-btn inline-block text-sm font-medium">View Project</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition section-slide">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">Web Hosting Infrastructure</h3>
+            <p class="text-[var(--text-secondary)] mb-6">Deployed Nginx, MariaDB, and WordPress with Docker and HTTPS on isolated networks.</p>
+            <a href="https://github.com/AyoubChraiti/inception" class="apple-btn inline-block text-sm font-medium">View Project</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition section-slide">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">Multiplayer Pong Game</h3>
+            <p class="text-[var(--text-secondary)] mb-6">Used Fastify, WebSocket, and SQLite for real-time gameplay with JWT and 2FA.</p>
+            <a href="https://github.com/AyoubChraiti/trance" class="apple-btn inline-block text-sm font-medium">View Project</a>
+        </div>
+        <!-- Project 4 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition section-slide">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">Live Chat App</h3>
+            <p class="text-[var(--text-secondary)] mb-6">Real-time web chat using WebSocket and TypeScript with authentication and message storage.</p>
+            <a href="https://github.com/AyoubChraiti/Live-Chat" class="apple-btn inline-block text-sm font-medium">View Project</a>
+        </div>
+        <!-- Project 5 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition section-slide">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">Minishell</h3>
+            <p class="text-[var(--text-secondary)] mb-6">Unix shell clone in C with piping, redirections, built-ins, and signal handling.</p>
+            <a href="https://github.com/AyoubChraiti/Minishell" class="apple-btn inline-block text-sm font-medium">View Project</a>
+        </div>
+        <!-- Project 6 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition section-slide">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">Project Management Tool</h3>
+            <p class="text-[var(--text-secondary)] mb-6">React + Spring Boot app with MongoDB for tasks, updates, and a modern UI.</p>
+            <a href="https://github.com/AyoubChraiti/Management_Tool" class="apple-btn inline-block text-sm font-medium">View Project</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-[var(--bg-primary)]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-[var(--text-primary)]">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">Python</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-4/5 transition-all duration-500"></div></div>
+                </div>
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">C++</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-5/5 transition-all duration-500"></div></div>
+                </div>
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">JavaScript</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-3/4 transition-all duration-500"></div></div>
+                </div>
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">TypeScript</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-3/4 transition-all duration-500"></div></div>
+                </div>
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">Java</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-3/5 transition-all duration-500"></div></div>
+                </div>
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">Docker</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-4/5 transition-all duration-500"></div></div>
+                </div>
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">React</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-3/5 transition-all duration-500"></div></div>
+                </div>
+                <div class="text-center section-slide">
+                    <p class="text-lg font-medium text-[var(--text-primary)]">Node.js</p>
+                    <div class="bg-[var(--progress-bg)] h-2 rounded-full mt-3"><div class="bg-[var(--progress-fill)] h-2 rounded-full w-3/5 transition-all duration-500"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="experiences" class="py-20 bg-[var(--bg-secondary)]">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16 text-[var(--text-primary)]">Education & Certifications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 section-slide">
+        <!-- 1 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">1337 Coding School, UM6P</h3>
+            <p class="text-[var(--text-secondary)] mb-4">2023 – Present</p>
+            <p class="text-[var(--text-secondary)] mb-6">Pursuing a Digital Technology Architect track at 1337, focusing on peer-driven, project-based learning in software engineering and systems programming.</p>
+        </div>
+        <!-- 2 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">ML Learning Bootcamp</h3>
+            <p class="text-[var(--text-secondary)] mb-4">Dec 2024 - Feb 2025</p>
+            <p class="text-[var(--text-secondary)] mb-6">Completed an intensive hands-on bootcamp focused on Python, Pandas, Scikit-learn, and machine learning pipelines, building practical ML solutions.</p>
+        </div>
+        <!-- 3 -->
+        <div class="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-primary)]">ALX Software Engineering Program</h3>
+            <p class="text-[var(--text-secondary)] mb-4">Mar 2022 - Oct 2023</p>
+            <p class="text-[var(--text-secondary)] mb-6">Completed foundational modules in C, Linux, Shell scripting, Git, and Data Structures, gaining a strong base in software development.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[var(--bg-primary)]">
+        <div class="max-w-7xl mx-auto px-6 text-center section-slide">
+            <h3 class="text-4xl font-bold mb-16 text-[var(--text-primary)]">Get In Touch</h3>
+            <p class="text-xl mb-8 text-[var(--text-secondary)]">I'm excited to connect for internship opportunities and collaborations.</p>
+            <div class="flex justify-center space-x-6 flex-wrap gap-y-4">
+                <a href="mailto:ayoubchraiti2@gmail.com" class="apple-btn contact-btn text-sm font-medium">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    Email
+                </a>
+                <a href="https://github.com/AyoubChraiti" class="apple-btn contact-btn text-sm font-medium">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 6.8c.85.004 1.71.12 2.52.35 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.69.93.69 1.88v2.79c0 .27.16.58.67.5A10.01 10.01 0 0022 12 10 10 0 0012 2z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/ayoubchraiti" class="apple-btn contact-btn text-sm font-medium">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-9.75 14.5v-6.75h-2.25V17.5h2.25zm-1.125-7.875c.75 0 1.375-.625 1.375-1.375S9.125 6.875 8.375 6.875 7 7.5 7 8.25s.625 1.375 1.375 1.375zm9.75 7.875V13c0-1.125-.375-2-1.375-2-.625 0-1 .375-1.25.875V13h-2.25v4.5h2.25v-2.75c0-.625.25-1.25.875-1.25s.875.625.875 1.25v2.75h2.25z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--bg-footer)] text-[var(--text-footer)] py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p>© 2025 Ayoub Chraiti. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="logic.js"></script>
+</body>
+</html>
