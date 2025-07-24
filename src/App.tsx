@@ -198,7 +198,7 @@ function App() {
           <AnimatedSection direction="up" delay={0.8}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.a
-                href="/Chraiti-Ayoub-Resume-En.pdf"
+                href="/Portfolio/Chraiti-Ayoub-Resume-En.pdf"
                 download
                 className="flex items-center gap-2 border border-gray-600 hover:border-purple-400 text-gray-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-200"
               >
