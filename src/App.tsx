@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, Menu, X, Sun, Moon } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Menu, X, Sun, Moon, ExternalLink } from 'lucide-react';
 import AnimatedSection from './components/AnimatedSection';
 import StaggerContainer, { StaggerItem } from './components/StaggerContainer';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
@@ -55,7 +55,7 @@ const App: React.FC = () => {
       techStack: ['Docker', 'Docker Compose', 'Nginx', 'MariaDB', 'WordPress', 'SSL'],
     },
     {
-      title: 'Full-Stack Web Application: Pong Game',
+      title: 'Full-Stack Web Application',
       description: 'Secure multiplayer Pong game with Fastify, TypeScript, WebSockets, JWT, 2FA, and containerized deployment.',
       techStack: ['Fastify', 'TypeScript', 'WebSockets', 'Docker', 'JWT', '2FA', 'SQLite'],
     },
@@ -70,7 +70,7 @@ const App: React.FC = () => {
       techStack: ['C Programming Language', 'POSIX', 'Shell', 'Process Management', 'Pipes', 'Unix Signals'],
     },
     {
-      title: '2D Game: So-Long',
+      title: '2D Game World: So-Long',
       description: 'A tile-based 2D game built with a custom game engine in C using the MinilibX graphics library. Includes collectibles, enemies, and player movement.',
       techStack: ['C Programming Language', 'MinilibX', 'Game Dev', '2D Graphics', 'Algorithms'],
     },
@@ -295,7 +295,7 @@ const App: React.FC = () => {
                 </h3>
                 <motion.div className="space-y-4">
                   {[
-                    "Motivated Software Engineering student at 1337 Coding School, UM6P Benguerir, where I’ve developed a strong foundation in full-stack web development using React, TypeScript, Java, and Spring Boot. The project-based, peer-driven learning environment at 1337 has enabled me to grow through real-world challenges, emphasizing autonomy, collaboration, and deep technical exploration.",
+                    "Motivated Software Engineering student at 1337 Coding School, UM6P Benguerir, where I’ve developed a strong foundation in Software engineering and Web development using React, TypeScript, Java, and Spring Boot. The project-based, peer-driven learning environment at 1337 has enabled me to grow through real-world challenges, emphasizing autonomy, collaboration, and deep technical exploration.",
                     "I enjoy solving complex problems, improving performance, and delivering clean code. I’ve worked on personal and collaborative projects, and I’m always looking to learn more.",
                     "I’m excited to collaborate with dynamic teams, leveraging collective expertise to deliver innovative, user-focused solutions that make a meaningful impact."
                   ].map((paragraph, idx) => (
@@ -483,63 +483,81 @@ const App: React.FC = () => {
             <StaggerContainer className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  title: 'Python & C++ Certifications',
-                  issuer: 'Codingame',
-                  description: 'Advanced problem-solving using C++ and Python 3, with a strong focus on data structures, algorithms, and optimization techniques through real-world coding challenges.',
-                },
-                {
-                  title: 'Intro to Data Science',
-                  issuer: 'IBM SkillsBuild',
-                  description: 'Introduced to the foundational concepts of data science, including the basic roles of data scientists, and an overview of how data can be collected, processed, and visualized.',
+                  title: 'HackerRank Software Engineering Certificate',
+                  issuer: 'HackerRank',
+                  description: 'Earned the HackerRank Software Engineering Certificate by completing the rigorous coding assessments. Demonstrated proficiency in algorithms, data structures, and practical software development skills and efficient code implementation.',
+                  url: 'https://www.hackerrank.com/certificates/iframe/597cc4976d5f'
                 },
                 {
                   title: 'Machine Learning Bootcamp',
                   issuer: '1337 Coding School',
                   description: 'Intensive hands-on training covering core machine learning algorithms, data preprocessing, Scikit-learn, and real-world ML pipeline implementation with a focus on experimentation.',
+                  url: 'https://github.com/AyoubChraiti/Entry-Level-ML-Engineer-Bootcamp'
                 },
                 {
-                  title: 'ALX Software Engineering Program',
-                  issuer: 'ALX Africa',
-                  description: 'Completed an intensive, project-driven curriculum covering low-level programming in C, shell scripting, full-stack web development, and agile collaboration in team environments.',
+                  title: 'Intro to Data Science',
+                  issuer: 'IBM SkillsBuild',
+                  description: 'Introduced to the foundational concepts of data science, including the basic roles of data scientists, and an overview of how data can be collected, processed, and visualized.',
+                  url: 'https://ayoubchraiti.github.io/Certificates/IBM-data-certificate.pdf'
                 },
-              ].map(({ title, issuer, description }, index) => (
+                {
+                  title: 'Python & C++ Certifications',
+                  issuer: 'Codingame',
+                  description: 'Advanced problem-solving using C++ and Python 3, with a strong focus on data structures, algorithms, and optimization techniques through real-world coding challenges.',
+                  url: 'https://www.codingame.com/certification/P45zVz2DG9Ha9gRQfeDV3w'
+                },
+              ].map(({ title, issuer, description, url }, index) => (
                 <StaggerItem key={index}>
-                  <motion.div
-                    className={`rounded-lg border p-6 flex flex-col items-center text-center transition-colors duration-300 ${
-                      theme === 'dark' ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'
-                    }`}
-                    whileHover={{
-                      scale: 1.03,
-                      borderColor: 'rgba(59, 130, 246, 0.8)',
-                      boxShadow:
-                        theme === 'dark'
-                          ? '0 20px 40px rgba(59, 130, 246, 0.3)'
-                          : '0 10px 20px rgba(59, 130, 246, 0.15)',
-                    }}
-                    transition={{ duration: 0.3 }}
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full"
                   >
-                    <h3
-                      className={`text-xl font-semibold mb-2 transition-colors duration-200 ${
-                        theme === 'dark' ? 'text-white' : 'text-gray-900'
+                    <motion.div
+                      className={`rounded-lg border p-6 flex flex-col items-center text-center transition-colors duration-300 cursor-pointer ${
+                        theme === 'dark' ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'
                       }`}
+                      whileHover={{
+                        scale: 1.03,
+                        borderColor: 'rgba(59, 130, 246, 0.8)',
+                        boxShadow:
+                          theme === 'dark'
+                            ? '0 20px 40px rgba(59, 130, 246, 0.3)'
+                            : '0 10px 20px rgba(59, 130, 246, 0.15)',
+                      }}
+                      transition={{ duration: 0.3 }}
                     >
-                      {title}
-                    </h3>
-                    <p
-                      className={`mb-2 transition-colors duration-200 ${
-                        theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                      } font-medium`}
-                    >
-                      {issuer}
-                    </p>
-                    <p
-                      className={`transition-colors duration-200 ${
-                        theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                      }`}
-                    >
-                      {description}
-                    </p>
-                  </motion.div>
+                      <div className="flex items-center justify-between w-full mb-2">
+                        <h3
+                          className={`text-xl font-semibold transition-colors duration-200 ${
+                            theme === 'dark' ? 'text-white' : 'text-gray-900'
+                          }`}
+                        >
+                          {title}
+                        </h3>
+                        <ExternalLink
+                          className={`w-5 h-5 ml-2 transition-colors duration-200 ${
+                            theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                          }`}
+                        />
+                      </div>
+                      <p
+                        className={`mb-2 transition-colors duration-200 ${
+                          theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                        } font-medium`}
+                      >
+                        {issuer}
+                      </p>
+                      <p
+                        className={`transition-colors duration-200 ${
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                        }`}
+                      >
+                        {description}
+                      </p>
+                    </motion.div>
+                  </a>
                 </StaggerItem>
               ))}
             </StaggerContainer>
