@@ -45,60 +45,55 @@ const App: React.FC = () => {
 
   const projects = [
     {
-      title: 'HyperTube | Streaming Service',
-      description: 'Start watching before the download finishes. I built a Java/Spring Boot backend with FFmpeg HLS transcoding, separating media processing from API requests to keep streaming and transcoding concurrent. TMDb and OpenSubtitles integrations enrich 10,000+ titles with metadata and multilingual subtitles.',
-      techStack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Redis', 'OAuth2', 'FFmpeg'],
+      title: 'HyperTube',
+      description: 'Video streaming with concurrent transcoding, metadata and subtitles.',
+      techStack: ['Java', 'Spring Boot', 'React', 'PostgreSQL'],
     },
     {
-      title: 'Matcha | Dating Platform',
-      description: 'From discovery to a live conversation. I built profiles, tag- and location-based matching, and WebSocket chat and notifications. Optimized PostgreSQL queries support discovery, while session authentication, input validation, rate limits and connection throttling protect user interactions.',
+      title: 'Matcha',
+      description: 'Profile discovery, real-time chat and secure authentication.',
       techStack: ['React', 'Express.js', 'PostgreSQL', 'WebSockets'],
     },
     {
-      title: 'LogLens | AI-Powered Log Analyzer',
-      description: 'Make failure signals easier to find. I built a React and TypeScript dashboard for real-time log ingestion, filtering and visualization, then integrated the Claude API to turn application and deployment logs into structured summaries that support engineers’ investigations.',
+      title: 'LogLens',
+      description: 'A log analysis dashboard with AI-generated diagnostic summaries.',
       techStack: ['React', 'TypeScript', 'Claude API'],
     },
     {
-      title: 'Live Chat Web App',
-      description: 'A real-time messaging application built with Fastify and WebSockets. Combines authenticated access, conversation channels and persistent message history so users can pick up where they left off.',
-      techStack: ['TypeScript', 'Fastify', 'WebSocket', 'SQLite', 'Tailwind CSS', 'HTML', 'CSS'],
+      title: 'Live Chat',
+      description: 'Real-time messaging with channels, authentication and saved conversations.',
+      techStack: ['TypeScript', 'Fastify', 'WebSockets'],
     },
     {
-      title: 'Containerized Web Hosting Infrastructure',
-      description: 'A containerized WordPress hosting stack with dedicated Nginx, MariaDB and application services. Docker Compose coordinates the environment, with SSL for encrypted connections and persistent storage for application data.',
-      techStack: ['Docker', 'Docker Compose', 'Nginx', 'MariaDB', 'WordPress', 'SSL'],
+      title: 'Web Hosting Infrastructure',
+      description: 'Containerized web hosting with encrypted connections and persistent storage.',
+      techStack: ['Docker', 'Nginx', 'MariaDB'],
     },
     {
-      title: 'Real-Time Multiplayer Pong',
-      description: 'A full-stack multiplayer Pong application connecting a Fastify and TypeScript backend to real-time gameplay over WebSockets. Includes JWT authentication, two-factor authentication and a containerized deployment.',
-      techStack: ['Fastify', 'TypeScript', 'WebSockets', 'Docker', 'JWT', '2FA', 'SQLite'],
+      title: 'Multiplayer Pong',
+      description: 'Real-time multiplayer gameplay with authentication and containerized deployment.',
+      techStack: ['TypeScript', 'Fastify', 'WebSockets', 'Docker'],
     },
     {
-      title: 'HTTP Server with CGI & Event-Driven I/O',
-      description: 'An HTTP server built in C/C++ to explore how web infrastructure works beneath the framework. Supports dynamic routing, CGI and multiple server configurations, with epoll-based non-blocking I/O for concurrent connections.',
-      techStack: ['C/C++', 'HTTP', 'Postman', 'CGI', 'Event-Driven I/O', 'Python'],
+      title: 'HTTP Server',
+      description: 'A C/C++ server with CGI, routing and non-blocking I/O.',
+      techStack: ['C/C++', 'HTTP', 'CGI'],
     },
     {
-      title: 'Unix Shell: Minishell',
-      description: 'A simplified Unix shell implemented in C with support for pipelines, redirections, environment variables, and built-in commands.',
-      techStack: ['C Programming Language', 'POSIX', 'Shell', 'Process Management', 'Pipes', 'Unix Signals'],
+      title: 'Minishell',
+      description: 'A Unix shell supporting pipes, redirections and built-in commands.',
+      techStack: ['C', 'POSIX'],
     },
     {
-      title: '2D Game World: So-Long',
-      description: 'A tile-based 2D game built with a custom game engine in C using the MinilibX graphics library. Includes collectibles, enemies, and player movement.',
-      techStack: ['C Programming Language', 'MinilibX', 'Game Dev', '2D Graphics', 'Algorithms'],
+      title: 'So-Long',
+      description: 'A 2D game built in C with movement, collectibles and enemies.',
+      techStack: ['C', 'MiniLibX'],
     },
   ];
 
   const skills = [
-    'Java', 'Spring Boot', 'REST APIs', 'FastAPI', 'Node.js', 'Express',
-    'React', 'TypeScript', 'JavaScript', 'Python',
-    'PostgreSQL', 'Redis', 'SQLite', 'SQL',
-    'Microservices', 'Distributed Systems', 'Concurrency', 'API Design', 'OOP',
-    'OCI', 'Terraform', 'Docker', 'Docker Compose', 'Kubernetes', 'CI/CD',
-    'LLM APIs', 'Claude API', 'Prompt & Tool Integration', 'AI-Assisted Development',
-    'Fastify', 'C++', 'Bash', 'Postman', 'Pytest', 'MariaDB', 'MongoDB', 'Git', 'GitHub',
+    'Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL',
+    'Python', 'Docker', 'Terraform', 'CI/CD',
   ];
 
   return (
@@ -251,7 +246,7 @@ const App: React.FC = () => {
             
             <AnimatedSection direction="up" delay={0.6}>
               <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-12 max-w-2xl mx-auto transition-colors duration-200`}>
-                I build the systems behind responsive web experiences—from Java APIs to real-time applications. At Oracle, I helped cut deployment workflow runtime by 30%. Now I bring that same focus on performance and reliability to full-stack engineering.
+                I build backend services, web applications and automated deployments.
               </p>
             </AnimatedSection>
             
@@ -315,9 +310,8 @@ const App: React.FC = () => {
                 </h3>
                 <motion.div className="space-y-4">
                   {[
-                    "I’m a full-stack developer with a strong backend foundation in Java, Spring Boot and API design. I graduated in 2026 from UM6P’s 1337 School in Computer Science and Digital Technologies, with an RNCP Level 7 qualification (Master’s equivalent). Its peer-driven, project-based approach taught me to investigate problems deeply, learn independently and collaborate through code.",
-                    "During my internship at Oracle Morocco R&D Center, I worked on the infrastructure that helps engineers ship software. I reduced deployment workflow runtime by 30%, co-designed a zero-downtime rollout strategy adopted by the infrastructure organization, and developed Terraform automation and AI-assisted log diagnostics.",
-                    "My projects connect backend engineering to the user experience: video that plays while it downloads, conversations delivered in real time, and logs that become useful diagnostic summaries. I’m looking for a junior backend or full-stack role where I can take ownership of features, learn from experienced engineers and build software people can depend on."
+                    "2026 graduate of UM6P’s 1337 School in Computer Science and Digital Technologies (RNCP Level 7).",
+                    "Focused on backend development, full-stack applications and DevOps. Open to junior software engineering roles."
                   ].map((paragraph, idx) => (
                     <motion.p
                       key={idx}
@@ -388,10 +382,10 @@ const App: React.FC = () => {
                   <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>February – July 2026 · Casablanca, Morocco</p>
                 </div>
                 <ul className={`list-disc pl-5 space-y-4 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <li>Reduced an internal deployment workflow’s runtime by <strong>30%</strong> by identifying independent service groups and parallelizing a previously sequential 24-hour process.</li>
-                  <li>Co-designed a <strong>zero-downtime blue/green rollout</strong> with 3 senior engineers and presented it to a 15-person infrastructure organization, which adopted it as the default deployment pattern.</li>
-                  <li>Developed and validated <strong>Terraform automation for OCI</strong>, making infrastructure provisioning more repeatable and reliable.</li>
-                  <li>Built an <strong>AI-assisted diagnostics tool</strong> to identify failure signals and turn application and deployment logs into diagnostic summaries for infrastructure engineers.</li>
+                  <li>Cut deployment workflow runtime by <strong>30%</strong> through parallel service execution.</li>
+                  <li>Co-designed <strong>zero-downtime deployments</strong> using blue/green releases.</li>
+                  <li>Automated cloud infrastructure provisioning with <strong>Terraform</strong>.</li>
+                  <li>Built log analysis tooling to support troubleshooting and diagnostics.</li>
                 </ul>
               </div>
             </AnimatedSection>
@@ -430,7 +424,7 @@ const App: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                From concurrent video streaming to AI-assisted diagnostics: projects that show how I connect backend systems, data and interfaces to solve concrete problems.
+                Selected backend, web and systems projects.
               </motion.p>
             </AnimatedSection>
 
@@ -535,25 +529,25 @@ const App: React.FC = () => {
                 {
                   title: 'HackerRank Software Engineering Certificate',
                   issuer: 'HackerRank',
-                  description: 'Software engineering certification covering algorithms, data structures and practical coding skills.',
+                  description: 'Algorithms, data structures and software engineering.',
                   url: 'https://www.hackerrank.com/certificates/iframe/597cc4976d5f'
                 },
                 {
                   title: 'Machine Learning Bootcamp',
                   issuer: '1337 Coding School',
-                  description: 'Hands-on training in core machine learning algorithms, data preprocessing and Scikit-learn, with practical exercises in building and evaluating ML pipelines.',
+                  description: 'Machine learning fundamentals and practical Scikit-learn workflows.',
                   url: 'https://github.com/AyoubChraiti/Entry-Level-ML-Engineer-Bootcamp'
                 },
                 {
                   title: 'Intro to Data Science',
                   issuer: 'IBM SkillsBuild',
-                  description: 'Foundational training in collecting, processing and visualizing data, and understanding how data science supports problem-solving.',
+                  description: 'Foundations of data collection, processing and visualization.',
                   url: 'https://ayoubchraiti.github.io/Certificates/IBM-data-certificate.pdf'
                 },
                 {
                   title: 'Java & Python Certifications',
                   issuer: 'Codingame',
-                  description: 'CodinGame certifications in Java and Python, complementing my backend development and scripting experience.',
+                  description: 'Java and Python problem-solving certifications.',
                   url: undefined
                 },
               ].map(({ title, issuer, description, url }, index) => (
@@ -646,7 +640,7 @@ const App: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Hiring a junior backend or full-stack engineer? I bring hands-on Oracle experience, a strong Java/Spring Boot foundation and the ability to build across the stack. Let’s talk about what your team is building.
+                Open to junior backend and full-stack roles. Let’s connect.
               </motion.p>
             </AnimatedSection>
 
