@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Download, Menu, X, Sun, Moon, ExternalLink } from 'lucide-react';
 import AnimatedSection from './components/AnimatedSection';
@@ -12,7 +12,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'certifications', 'contact'];
+      const sections = ['home', 'about', 'experience', 'projects', 'certifications', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       let currentSection = 'home';
 
@@ -45,23 +45,38 @@ const App: React.FC = () => {
 
   const projects = [
     {
+      title: 'HyperTube | Streaming Service',
+      description: 'Start watching before the download finishes. I built a Java/Spring Boot backend with FFmpeg HLS transcoding, separating media processing from API requests to keep streaming and transcoding concurrent. TMDb and OpenSubtitles integrations enrich 10,000+ titles with metadata and multilingual subtitles.',
+      techStack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Redis', 'OAuth2', 'FFmpeg'],
+    },
+    {
+      title: 'Matcha | Dating Platform',
+      description: 'From discovery to a live conversation. I built profiles, tag- and location-based matching, and WebSocket chat and notifications. Optimized PostgreSQL queries support discovery, while session authentication, input validation, rate limits and connection throttling protect user interactions.',
+      techStack: ['React', 'Express.js', 'PostgreSQL', 'WebSockets'],
+    },
+    {
+      title: 'LogLens | AI-Powered Log Analyzer',
+      description: 'Make failure signals easier to find. I built a React and TypeScript dashboard for real-time log ingestion, filtering and visualization, then integrated the Claude API to turn application and deployment logs into structured summaries that support engineers’ investigations.',
+      techStack: ['React', 'TypeScript', 'Claude API'],
+    },
+    {
       title: 'Live Chat Web App',
-      description: 'A real-time web-based chat system built with WebSocket and Fastify, enabling instant communication between users with authentication, channels, and message persistence.',
+      description: 'A real-time messaging application built with Fastify and WebSockets. Combines authenticated access, conversation channels and persistent message history so users can pick up where they left off.',
       techStack: ['TypeScript', 'Fastify', 'WebSocket', 'SQLite', 'Tailwind CSS', 'HTML', 'CSS'],
     },
     {
       title: 'Containerized Web Hosting Infrastructure',
-      description: 'Secure, modular web infrastructure using Docker, Docker Compose, Nginx, MariaDB, and WordPress with SSL and persistent storage.',
+      description: 'A containerized WordPress hosting stack with dedicated Nginx, MariaDB and application services. Docker Compose coordinates the environment, with SSL for encrypted connections and persistent storage for application data.',
       techStack: ['Docker', 'Docker Compose', 'Nginx', 'MariaDB', 'WordPress', 'SSL'],
     },
     {
-      title: 'Full-Stack Web Application',
-      description: 'Secure multiplayer Pong game with Fastify, TypeScript, WebSockets, JWT, 2FA, and containerized deployment.',
+      title: 'Real-Time Multiplayer Pong',
+      description: 'A full-stack multiplayer Pong application connecting a Fastify and TypeScript backend to real-time gameplay over WebSockets. Includes JWT authentication, two-factor authentication and a containerized deployment.',
       techStack: ['Fastify', 'TypeScript', 'WebSockets', 'Docker', 'JWT', '2FA', 'SQLite'],
     },
     {
       title: 'HTTP Server with CGI & Event-Driven I/O',
-      description: 'High-performance multi-server HTTP server in C/C++ with dynamic routing, RESTful design, and epoll-based non-blocking I/O.',
+      description: 'An HTTP server built in C/C++ to explore how web infrastructure works beneath the framework. Supports dynamic routing, CGI and multiple server configurations, with epoll-based non-blocking I/O for concurrent connections.',
       techStack: ['C/C++', 'HTTP', 'Postman', 'CGI', 'Event-Driven I/O', 'Python'],
     },
     {
@@ -77,12 +92,13 @@ const App: React.FC = () => {
   ];
 
   const skills = [
-    'Fastify', 'Node.js', 'Spring Boot', 'React',
-    'Python', 'C++', 'Java', 'JavaScript', 'TypeScript', 'Bash',
-    'Docker', 'Kubernetes',
-    'Postman', 'Pytest',
-    'PostgreSQL', 'MariaDB', 'SQLite', 'MongoDB', 'Redis',
-    'Git', 'GitHub',
+    'Java', 'Spring Boot', 'REST APIs', 'FastAPI', 'Node.js', 'Express',
+    'React', 'TypeScript', 'JavaScript', 'Python',
+    'PostgreSQL', 'Redis', 'SQLite', 'SQL',
+    'Microservices', 'Distributed Systems', 'Concurrency', 'API Design', 'OOP',
+    'OCI', 'Terraform', 'Docker', 'Docker Compose', 'Kubernetes', 'CI/CD',
+    'LLM APIs', 'Claude API', 'Prompt & Tool Integration', 'AI-Assisted Development',
+    'Fastify', 'C++', 'Bash', 'Postman', 'Pytest', 'MariaDB', 'MongoDB', 'Git', 'GitHub',
   ];
 
   return (
@@ -108,14 +124,14 @@ const App: React.FC = () => {
                 Ayoub Chraiti
               </motion.div>
               {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
+              <div className="hidden lg:flex items-center space-x-8">
                 <motion.div
                   className="ml-10 flex items-baseline space-x-8"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  {['home', 'about', 'projects', 'certifications', 'contact'].map((section, index) => (
+                  {['home', 'about', 'experience', 'projects', 'certifications', 'contact'].map((section, index) => (
                     <motion.button
                       key={section}
                       onClick={() => scrollToSection(section)}
@@ -136,6 +152,7 @@ const App: React.FC = () => {
                 </motion.div>
                 <motion.button
                   onClick={toggleTheme}
+                  aria-label="Toggle color theme"
                   className={`
                     p-2 rounded-full transition-all duration-200
                     ${theme === 'dark'
@@ -150,9 +167,11 @@ const App: React.FC = () => {
                 </motion.button>
               </div>
               {/* Mobile menu button */}
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <motion.button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={isMenuOpen}
                   className={`${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} p-2 transition-colors duration-200`}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -165,14 +184,14 @@ const App: React.FC = () => {
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <motion.div
-              className={`md:hidden ${theme === 'dark' ? 'bg-black/95 border-gray-800' : 'bg-gray-50/95 border-gray-200'} backdrop-blur-md border-t transition-colors duration-300`}
+              className={`lg:hidden ${theme === 'dark' ? 'bg-black/95 border-gray-800' : 'bg-gray-50/95 border-gray-200'} backdrop-blur-md border-t transition-colors duration-300`}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {['home', 'about', 'projects', 'certifications', 'contact'].map((section, index) => (
+                {['home', 'about', 'experience', 'projects', 'certifications', 'contact'].map((section, index) => (
                   <motion.button
                     key={section}
                     onClick={() => scrollToSection(section)}
@@ -190,6 +209,7 @@ const App: React.FC = () => {
                 ))}
                 <motion.button
                   onClick={toggleTheme}
+                  aria-label="Toggle color theme"
                   className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 ${
                     theme === 'dark' ? 'text-gray-300 hover:text-white hover:bg-blue-900/10' : 'text-gray-600 hover:text-gray-900 hover:bg-blue-100/10'
                   }`}
@@ -225,20 +245,20 @@ const App: React.FC = () => {
             
             <AnimatedSection direction="up" delay={0.4}>
               <p className={`text-xl sm:text-2xl lg:text-3xl ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'} mb-8 transition-colors duration-200`}>
-                Software Developer & Digital Technology Architect Student
+                Full-Stack Developer | Java, Spring Boot & React
               </p>
             </AnimatedSection>
             
             <AnimatedSection direction="up" delay={0.6}>
               <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-12 max-w-2xl mx-auto transition-colors duration-200`}>
-                Passionate about building efficient, scalable software. I craft full-stack applications with clean code, while focusing on performance and collaboration.
+                I build the systems behind responsive web experiences—from Java APIs to real-time applications. At Oracle, I helped cut deployment workflow runtime by 30%. Now I bring that same focus on performance and reliability to full-stack engineering.
               </p>
             </AnimatedSection>
             
             <AnimatedSection direction="up" delay={0.8}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.a
-                  href="/Portfolio/Chraiti-Ayoub-Resume-En.pdf"
+                  href={`${import.meta.env.BASE_URL}Ayoub_Chraiti-Resume.pdf`}
                   download
                   className={`flex items-center gap-2 border ${theme === 'dark' ? 'border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white' : 'border-gray-300 hover:border-blue-400 text-gray-700 hover:text-gray-900'} px-8 py-3 rounded-lg font-medium transition-all duration-200`}
                 >
@@ -252,7 +272,7 @@ const App: React.FC = () => {
                   whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)' }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Explore My Work
+                  View My Projects
                 </motion.button>
               </div>
             </AnimatedSection>
@@ -295,9 +315,9 @@ const App: React.FC = () => {
                 </h3>
                 <motion.div className="space-y-4">
                   {[
-                    "Motivated Software Engineering student at 1337 Coding School, UM6P Benguerir, where I’ve developed a strong foundation in Software engineering and Web development using React, TypeScript, Java, and Spring Boot. The project-based, peer-driven learning environment at 1337 has enabled me to grow through real-world challenges, emphasizing autonomy, collaboration, and deep technical exploration.",
-                    "I enjoy solving complex problems, improving performance, and delivering clean code. I’ve worked on personal and collaborative projects, and I’m always looking to learn more.",
-                    "I’m excited to collaborate with dynamic teams, leveraging collective expertise to deliver innovative, user-focused solutions that make a meaningful impact."
+                    "I’m a full-stack developer with a strong backend foundation in Java, Spring Boot and API design. I graduated in 2026 from UM6P’s 1337 School in Computer Science and Digital Technologies, with an RNCP Level 7 qualification (Master’s equivalent). Its peer-driven, project-based approach taught me to investigate problems deeply, learn independently and collaborate through code.",
+                    "During my internship at Oracle Morocco R&D Center, I worked on the infrastructure that helps engineers ship software. I reduced deployment workflow runtime by 30%, co-designed a zero-downtime rollout strategy adopted by the infrastructure organization, and developed Terraform automation and AI-assisted log diagnostics.",
+                    "My projects connect backend engineering to the user experience: video that plays while it downloads, conversations delivered in real time, and logs that become useful diagnostic summaries. I’m looking for a junior backend or full-stack role where I can take ownership of features, learn from experienced engineers and build software people can depend on."
                   ].map((paragraph, idx) => (
                     <motion.p
                       key={idx}
@@ -348,6 +368,36 @@ const App: React.FC = () => {
           </div>
         </section>
 
+        {/* Experience Section */}
+        <section
+          id="experience"
+          className={`py-20 transition-colors duration-300 ${theme === 'dark' ? 'bg-black' : 'bg-gray-50'}`}
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection direction="up" className="text-center mb-16">
+              <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Professional Experience</h2>
+              <motion.div className="w-24 h-1 bg-blue-600 mx-auto rounded" initial={{ width: 0 }} whileInView={{ width: 96 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} />
+            </AnimatedSection>
+            <AnimatedSection direction="up" delay={0.2}>
+              <div className={`rounded-lg border p-6 sm:p-8 ${theme === 'dark' ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'}`}>
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-4 mb-6">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-2">Oracle Morocco R&amp;D Center</h3>
+                    <p className={theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}>Software Engineering Intern</p>
+                  </div>
+                  <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>February – July 2026 · Casablanca, Morocco</p>
+                </div>
+                <ul className={`list-disc pl-5 space-y-4 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <li>Reduced an internal deployment workflow’s runtime by <strong>30%</strong> by identifying independent service groups and parallelizing a previously sequential 24-hour process.</li>
+                  <li>Co-designed a <strong>zero-downtime blue/green rollout</strong> with 3 senior engineers and presented it to a 15-person infrastructure organization, which adopted it as the default deployment pattern.</li>
+                  <li>Developed and validated <strong>Terraform automation for OCI</strong>, making infrastructure provisioning more repeatable and reliable.</li>
+                  <li>Built an <strong>AI-assisted diagnostics tool</strong> to identify failure signals and turn application and deployment logs into diagnostic summaries for infrastructure engineers.</li>
+                </ul>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
         {/* Projects Section */}
         <section
           id="projects"
@@ -380,7 +430,7 @@ const App: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Here are some of my recent projects that showcase my skills and passion for development.
+                From concurrent video streaming to AI-assisted diagnostics: projects that show how I connect backend systems, data and interfaces to solve concrete problems.
               </motion.p>
             </AnimatedSection>
 
@@ -485,26 +535,26 @@ const App: React.FC = () => {
                 {
                   title: 'HackerRank Software Engineering Certificate',
                   issuer: 'HackerRank',
-                  description: 'Earned the HackerRank Software Engineering Certificate by completing the rigorous coding assessments. Demonstrated proficiency in algorithms, data structures, and practical software development skills and efficient code implementation.',
+                  description: 'Software engineering certification covering algorithms, data structures and practical coding skills.',
                   url: 'https://www.hackerrank.com/certificates/iframe/597cc4976d5f'
                 },
                 {
                   title: 'Machine Learning Bootcamp',
                   issuer: '1337 Coding School',
-                  description: 'Intensive hands-on training covering core machine learning algorithms, data preprocessing, Scikit-learn, and real-world ML pipeline implementation with a focus on experimentation.',
+                  description: 'Hands-on training in core machine learning algorithms, data preprocessing and Scikit-learn, with practical exercises in building and evaluating ML pipelines.',
                   url: 'https://github.com/AyoubChraiti/Entry-Level-ML-Engineer-Bootcamp'
                 },
                 {
                   title: 'Intro to Data Science',
                   issuer: 'IBM SkillsBuild',
-                  description: 'Introduced to the foundational concepts of data science, including the basic roles of data scientists, and an overview of how data can be collected, processed, and visualized.',
+                  description: 'Foundational training in collecting, processing and visualizing data, and understanding how data science supports problem-solving.',
                   url: 'https://ayoubchraiti.github.io/Certificates/IBM-data-certificate.pdf'
                 },
                 {
-                  title: 'Python & C++ Certifications',
+                  title: 'Java & Python Certifications',
                   issuer: 'Codingame',
-                  description: 'Advanced problem-solving using C++ and Python 3, with a strong focus on data structures, algorithms, and optimization techniques through real-world coding challenges.',
-                  url: 'https://www.codingame.com/certification/P45zVz2DG9Ha9gRQfeDV3w'
+                  description: 'CodinGame certifications in Java and Python, complementing my backend development and scripting experience.',
+                  url: undefined
                 },
               ].map(({ title, issuer, description, url }, index) => (
                 <StaggerItem key={index}>
@@ -536,11 +586,11 @@ const App: React.FC = () => {
                         >
                           {title}
                         </h3>
-                        <ExternalLink
+                        {url && <ExternalLink
                           className={`w-5 h-5 ml-2 transition-colors duration-200 ${
                             theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
                           }`}
-                        />
+                        />}
                       </div>
                       <p
                         className={`mb-2 transition-colors duration-200 ${
@@ -596,7 +646,7 @@ const App: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Let's connect and create something awesome together.
+                Hiring a junior backend or full-stack engineer? I bring hands-on Oracle experience, a strong Java/Spring Boot foundation and the ability to build across the stack. Let’s talk about what your team is building.
               </motion.p>
             </AnimatedSection>
 
@@ -667,7 +717,7 @@ const App: React.FC = () => {
                   theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
                 }`}
               >
-                © 2025 Ayoub Chraiti. Built with React & Tailwind CSS.
+                © {new Date().getFullYear()} Ayoub Chraiti. Built with React & Tailwind CSS.
               </p>
             </div>
           </footer>
