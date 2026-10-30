@@ -74,26 +74,12 @@ const App: React.FC = () => {
       description: 'Real-time multiplayer gameplay with authentication and containerized deployment.',
       techStack: ['TypeScript', 'Fastify', 'WebSockets', 'Docker'],
     },
-    {
-      title: 'HTTP Server',
-      description: 'A C/C++ server with CGI, routing and non-blocking I/O.',
-      techStack: ['C/C++', 'HTTP', 'CGI'],
-    },
-    {
-      title: 'Minishell',
-      description: 'A Unix shell supporting pipes, redirections and built-in commands.',
-      techStack: ['C', 'POSIX'],
-    },
-    {
-      title: 'So-Long',
-      description: 'A 2D game built in C with movement, collectibles and enemies.',
-      techStack: ['C', 'MiniLibX'],
-    },
   ];
 
   const skills = [
-    'Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL',
-    'Python', 'Docker', 'Terraform', 'CI/CD',
+    'Java', 'Spring Boot', 'REST APIs', 'Python',
+    'React', 'TypeScript', 'SQL', 'PostgreSQL',
+    'Docker', 'Kubernetes', 'Terraform', 'CI/CD',
   ];
 
   return (
@@ -524,10 +510,10 @@ const App: React.FC = () => {
               />
             </AnimatedSection>
 
-            <StaggerContainer className="grid md:grid-cols-2 gap-8">
+            <StaggerContainer className="grid md:grid-cols-2 auto-rows-fr gap-6">
               {[
                 {
-                  title: 'HackerRank Software Engineering Certificate',
+                  title: 'Software Engineer Certificate',
                   issuer: 'HackerRank',
                   description: 'Algorithms, data structures and software engineering.',
                   url: 'https://www.hackerrank.com/certificates/iframe/597cc4976d5f'
@@ -546,20 +532,20 @@ const App: React.FC = () => {
                 },
                 {
                   title: 'Java & Python Certifications',
-                  issuer: 'Codingame',
+                  issuer: 'CodinGame',
                   description: 'Java and Python problem-solving certifications.',
                   url: undefined
                 },
               ].map(({ title, issuer, description, url }, index) => (
-                <StaggerItem key={index}>
+                <StaggerItem key={index} className="h-full">
                   <a
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full h-full"
+                    className="block w-full h-full rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
                   >
                     <motion.div
-                      className={`rounded-lg border p-6 flex flex-col items-center text-center transition-colors duration-300 cursor-pointer ${
+                      className={`rounded-lg border p-6 sm:p-8 h-full min-h-[220px] flex flex-col items-start text-left transition-colors duration-300 ${
                         theme === 'dark' ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'
                       }`}
                       whileHover={{
@@ -572,29 +558,29 @@ const App: React.FC = () => {
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="flex items-center justify-between w-full mb-2">
+                      <div className="flex items-start justify-between gap-4 w-full min-h-[56px] mb-3">
                         <h3
-                          className={`text-xl font-semibold transition-colors duration-200 ${
+                          className={`text-xl leading-7 font-semibold transition-colors duration-200 ${
                             theme === 'dark' ? 'text-white' : 'text-gray-900'
                           }`}
                         >
                           {title}
                         </h3>
                         {url && <ExternalLink
-                          className={`w-5 h-5 ml-2 transition-colors duration-200 ${
+                          className={`w-5 h-5 shrink-0 mt-1 transition-colors duration-200 ${
                             theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
                           }`}
                         />}
                       </div>
                       <p
-                        className={`mb-2 transition-colors duration-200 ${
+                        className={`mb-3 text-sm transition-colors duration-200 ${
                           theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
                         } font-medium`}
                       >
                         {issuer}
                       </p>
                       <p
-                        className={`transition-colors duration-200 ${
+                        className={`text-sm leading-relaxed transition-colors duration-200 ${
                           theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
                         }`}
                       >
