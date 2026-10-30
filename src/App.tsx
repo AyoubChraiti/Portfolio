@@ -368,10 +368,10 @@ const App: React.FC = () => {
                   <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>February – July 2026 · Casablanca, Morocco</p>
                 </div>
                 <ul className={`list-disc pl-5 space-y-4 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <li>Cut deployment workflow runtime by <strong>30%</strong> through parallel service execution.</li>
-                  <li>Co-designed <strong>zero-downtime deployments</strong> using blue/green releases.</li>
-                  <li>Automated cloud infrastructure provisioning with <strong>Terraform</strong>.</li>
-                  <li>Built log analysis tooling to support troubleshooting and diagnostics.</li>
+                  <li>Reduced deployment time by <strong>30%</strong> by running independent services in parallel.</li>
+                  <li>Worked with senior engineers on <strong>blue/green releases</strong> to deploy updates without downtime.</li>
+                  <li>Used <strong>Terraform</strong> to make cloud infrastructure setup more consistent and repeatable.</li>
+                  <li>Built a log analysis tool to help engineers identify failures and troubleshoot deployments.</li>
                 </ul>
               </div>
             </AnimatedSection>
