@@ -367,12 +367,11 @@ const App: React.FC = () => {
                   </div>
                   <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>February – July 2026 · Casablanca, Morocco</p>
                 </div>
-                <ul className={`list-disc pl-5 space-y-4 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <li>Reduced deployment time by <strong>30%</strong> by running independent services in parallel.</li>
-                  <li>Worked with senior engineers on <strong>blue/green releases</strong> to deploy updates without downtime.</li>
-                  <li>Used <strong>Terraform</strong> to make cloud infrastructure setup more consistent and repeatable.</li>
-                  <li>Built a log analysis tool to help engineers identify failures and troubleshoot deployments.</li>
-                </ul>
+                <div className={`space-y-4 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p>During my internship, I worked on backend service deployments and cloud infrastructure, helping the team make releases faster and more reliable. I identified services that could be deployed independently and changed a sequential workflow to run them in parallel, reducing its runtime by <strong>30%</strong>.</p>
+                  <p>I also worked with senior engineers to design a <strong>blue/green release strategy</strong> for deploying updates without downtime. The team adopted it as its default deployment approach. Alongside this work, I developed and validated <strong>Terraform automation</strong> to make cloud infrastructure provisioning consistent and repeatable.</p>
+                  <p>To support troubleshooting, I built an AI-assisted tool that analyzed application and deployment logs, identified failure signals and produced diagnostic summaries. This work gave me practical experience connecting backend services, deployment automation and operational tooling to help engineers release and maintain software.</p>
+                </div>
               </div>
             </AnimatedSection>
           </div>
