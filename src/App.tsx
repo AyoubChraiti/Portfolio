@@ -46,37 +46,37 @@ const App: React.FC = () => {
   const projects = [
     {
       title: 'HyperTube | Streaming Service',
-      description: 'Built a Java/Spring Boot streaming backend with FFmpeg HLS transcoding so playback starts before downloads finish. Separated media processing from API requests for concurrent streaming, and integrated TMDb and OpenSubtitles to enrich 10,000+ titles with metadata and multilingual subtitles.',
+      description: 'Start watching before the download finishes. I built a Java/Spring Boot backend with FFmpeg HLS transcoding, separating media processing from API requests to keep streaming and transcoding concurrent. TMDb and OpenSubtitles integrations enrich 10,000+ titles with metadata and multilingual subtitles.',
       techStack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Redis', 'OAuth2', 'FFmpeg'],
     },
     {
       title: 'Matcha | Dating Platform',
-      description: 'Built profiles and tag- and location-based discovery with optimized PostgreSQL queries, plus real-time chat and notifications over WebSockets. Added session authentication, input sanitization, rate limiting and connection throttling to reduce spam and brute-force attempts.',
+      description: 'From discovery to a live conversation. I built profiles, tag- and location-based matching, and WebSocket chat and notifications. Optimized PostgreSQL queries support discovery, while session authentication, input validation, rate limits and connection throttling protect user interactions.',
       techStack: ['React', 'Express.js', 'PostgreSQL', 'WebSockets'],
     },
     {
       title: 'LogLens | AI-Powered Log Analyzer',
-      description: 'Integrated the Claude API to turn application and deployment logs into structured diagnostic summaries for engineers investigating failures. Built real-time log ingestion, filtering and visualization to support AI-assisted root-cause analysis.',
+      description: 'Make failure signals easier to find. I built a React and TypeScript dashboard for real-time log ingestion, filtering and visualization, then integrated the Claude API to turn application and deployment logs into structured summaries that support engineers’ investigations.',
       techStack: ['React', 'TypeScript', 'Claude API'],
     },
     {
       title: 'Live Chat Web App',
-      description: 'A real-time web-based chat system built with WebSocket and Fastify, enabling instant communication between users with authentication, channels, and message persistence.',
+      description: 'A real-time messaging application built with Fastify and WebSockets. Combines authenticated access, conversation channels and persistent message history so users can pick up where they left off.',
       techStack: ['TypeScript', 'Fastify', 'WebSocket', 'SQLite', 'Tailwind CSS', 'HTML', 'CSS'],
     },
     {
       title: 'Containerized Web Hosting Infrastructure',
-      description: 'Secure, modular web infrastructure using Docker, Docker Compose, Nginx, MariaDB, and WordPress with SSL and persistent storage.',
+      description: 'A containerized WordPress hosting stack with dedicated Nginx, MariaDB and application services. Docker Compose coordinates the environment, with SSL for encrypted connections and persistent storage for application data.',
       techStack: ['Docker', 'Docker Compose', 'Nginx', 'MariaDB', 'WordPress', 'SSL'],
     },
     {
-      title: 'Full-Stack Web Application',
-      description: 'Secure multiplayer Pong game with Fastify, TypeScript, WebSockets, JWT, 2FA, and containerized deployment.',
+      title: 'Real-Time Multiplayer Pong',
+      description: 'A full-stack multiplayer Pong application connecting a Fastify and TypeScript backend to real-time gameplay over WebSockets. Includes JWT authentication, two-factor authentication and a containerized deployment.',
       techStack: ['Fastify', 'TypeScript', 'WebSockets', 'Docker', 'JWT', '2FA', 'SQLite'],
     },
     {
       title: 'HTTP Server with CGI & Event-Driven I/O',
-      description: 'High-performance multi-server HTTP server in C/C++ with dynamic routing, RESTful design, and epoll-based non-blocking I/O.',
+      description: 'An HTTP server built in C/C++ to explore how web infrastructure works beneath the framework. Supports dynamic routing, CGI and multiple server configurations, with epoll-based non-blocking I/O for concurrent connections.',
       techStack: ['C/C++', 'HTTP', 'Postman', 'CGI', 'Event-Driven I/O', 'Python'],
     },
     {
@@ -251,7 +251,7 @@ const App: React.FC = () => {
             
             <AnimatedSection direction="up" delay={0.6}>
               <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-12 max-w-2xl mx-auto transition-colors duration-200`}>
-                2026 UM6P / 1337 graduate and former Oracle software engineering intern. I build backend services and full-stack applications, combining API integration, cloud infrastructure and practical AI tools.
+                I build the systems behind responsive web experiences—from Java APIs to real-time applications. At Oracle, I helped cut deployment workflow runtime by 30%. Now I bring that same focus on performance and reliability to full-stack engineering.
               </p>
             </AnimatedSection>
             
@@ -272,7 +272,7 @@ const App: React.FC = () => {
                   whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)' }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Explore My Work
+                  View My Projects
                 </motion.button>
               </div>
             </AnimatedSection>
@@ -315,9 +315,9 @@ const App: React.FC = () => {
                 </h3>
                 <motion.div className="space-y-4">
                   {[
-                    "I graduated in 2026 from University Mohammed VI Polytechnic — 1337 School in Computer Science and Digital Technologies, earning an RNCP Level 7 qualification (Master’s equivalent). My project-based training developed my foundations in software engineering, autonomy and collaboration.",
-                    "At Oracle Morocco R&D Center, I reduced an internal deployment workflow’s runtime by 30%, co-designed a zero-downtime rollout strategy adopted by the infrastructure organization, and built Terraform automation for OCI and AI-assisted log diagnostics.",
-                    "I work across Java/Spring Boot backends, React and TypeScript interfaces, PostgreSQL, cloud infrastructure and LLM integrations. I’m looking for junior backend or full-stack engineering opportunities where I can contribute to reliable products and grow with an experienced team."
+                    "I’m a full-stack developer with a strong backend foundation in Java, Spring Boot and API design. I graduated in 2026 from UM6P’s 1337 School in Computer Science and Digital Technologies, with an RNCP Level 7 qualification (Master’s equivalent). Its peer-driven, project-based approach taught me to investigate problems deeply, learn independently and collaborate through code.",
+                    "During my internship at Oracle Morocco R&D Center, I worked on the infrastructure that helps engineers ship software. I reduced deployment workflow runtime by 30%, co-designed a zero-downtime rollout strategy adopted by the infrastructure organization, and developed Terraform automation and AI-assisted log diagnostics.",
+                    "My projects connect backend engineering to the user experience: video that plays while it downloads, conversations delivered in real time, and logs that become useful diagnostic summaries. I’m looking for a junior backend or full-stack role where I can take ownership of features, learn from experienced engineers and build software people can depend on."
                   ].map((paragraph, idx) => (
                     <motion.p
                       key={idx}
@@ -430,7 +430,7 @@ const App: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Selected work in streaming systems, real-time applications and AI-assisted diagnostics, followed by earlier software engineering projects.
+                From concurrent video streaming to AI-assisted diagnostics: projects that show how I connect backend systems, data and interfaces to solve concrete problems.
               </motion.p>
             </AnimatedSection>
 
@@ -535,19 +535,19 @@ const App: React.FC = () => {
                 {
                   title: 'HackerRank Software Engineering Certificate',
                   issuer: 'HackerRank',
-                  description: 'Earned the HackerRank Software Engineering Certificate by completing the rigorous coding assessments. Demonstrated proficiency in algorithms, data structures, and practical software development skills and efficient code implementation.',
+                  description: 'Software engineering certification covering algorithms, data structures and practical coding skills.',
                   url: 'https://www.hackerrank.com/certificates/iframe/597cc4976d5f'
                 },
                 {
                   title: 'Machine Learning Bootcamp',
                   issuer: '1337 Coding School',
-                  description: 'Intensive hands-on training covering core machine learning algorithms, data preprocessing, Scikit-learn, and real-world ML pipeline implementation with a focus on experimentation.',
+                  description: 'Hands-on training in core machine learning algorithms, data preprocessing and Scikit-learn, with practical exercises in building and evaluating ML pipelines.',
                   url: 'https://github.com/AyoubChraiti/Entry-Level-ML-Engineer-Bootcamp'
                 },
                 {
                   title: 'Intro to Data Science',
                   issuer: 'IBM SkillsBuild',
-                  description: 'Introduced to the foundational concepts of data science, including the basic roles of data scientists, and an overview of how data can be collected, processed, and visualized.',
+                  description: 'Foundational training in collecting, processing and visualizing data, and understanding how data science supports problem-solving.',
                   url: 'https://ayoubchraiti.github.io/Certificates/IBM-data-certificate.pdf'
                 },
                 {
@@ -646,7 +646,7 @@ const App: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Open to junior backend and full-stack engineering opportunities. Let’s discuss how I can contribute to your team.
+                Hiring a junior backend or full-stack engineer? I bring hands-on Oracle experience, a strong Java/Spring Boot foundation and the ability to build across the stack. Let’s talk about what your team is building.
               </motion.p>
             </AnimatedSection>
 
